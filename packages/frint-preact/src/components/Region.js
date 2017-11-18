@@ -1,6 +1,5 @@
 /* eslint-disable no-console, no-underscore-dangle, import/no-extraneous-dependencies */
 import Preact, { h } from 'preact';
-import PropTypes from 'prop-types';
 
 import composeHandlers from 'frint-component-utils/lib/composeHandlers';
 import RegionHandler from 'frint-component-handlers/lib/RegionHandler';

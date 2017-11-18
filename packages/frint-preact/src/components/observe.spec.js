@@ -21,7 +21,7 @@ describe('frint-preact › components › observe', function () {
     expect(observe).to.be.a('function');
   });
 
-  it.only('generates Component bound to observable for props, without app in context', function () {
+  it('generates Component bound to observable for props, without app in context', function () {
     function Component({ counter }) {
       return (
         <p id="counter">{counter}</p>
@@ -144,7 +144,7 @@ describe('frint-preact › components › observe', function () {
     expect(document.getElementById('counterFromParent').innerHTML).to.equal('1');
   });
 
-  it('can be tested with enzyme', function () {
+  it.skip('can be tested with enzyme', function () {
     function ChildComponent() {
       return <p>I am a child.</p>;
     }
@@ -186,7 +186,7 @@ describe('frint-preact › components › observe', function () {
     expect(wrapper.text()).to.contain('I am a child');
   });
 
-  it('can return props synchronously', function () {
+  it.skip('can return props synchronously', function () {
     function Component({ name }) {
       return (
         <div>

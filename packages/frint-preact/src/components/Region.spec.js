@@ -146,7 +146,7 @@ describe('frint-preact › components › Region', function () {
       { id: '3', title: 'Third todo' },
     ];
     let rootComponentInstance; // @TODO: hack
-    class RootComponent extends React.Component {
+    class RootComponent extends Preact.Component {
       render() {
         rootComponentInstance = this;
 
@@ -257,7 +257,7 @@ describe('frint-preact › components › Region', function () {
       { id: '1', title: 'First todo' },
     ];
     let rootComponentInstance; // @TODO: hack
-    class RootComponent extends React.Component {
+    class RootComponent extends Preact.Component {
       render() {
         rootComponentInstance = this;
 
