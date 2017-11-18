@@ -58,7 +58,7 @@ describe('frint-preact › components › observe', function () {
     expect(document.getElementById('text').innerHTML).to.equal('Hello World');
   });
 
-  it('generates Component bound to observable for props, with app in context and props from parent component', function () {
+  it('generates Component bound to observable for props, with app in context and props from parent component', function (done) {
     function Component({ name, counter, parentProps }) {
       return (
         <div>
@@ -140,53 +140,16 @@ describe('frint-preact › components › observe', function () {
     expect(document.getElementById('counterFromParent').innerHTML).to.equal('0');
 
     document.getElementById('increment').click();
-    expect(document.getElementById('counter').innerHTML).to.equal('1');
-    expect(document.getElementById('counterFromParent').innerHTML).to.equal('1');
+
+    setImmediate(function () {
+      expect(document.getElementById('counter').innerHTML).to.equal('1');
+      expect(document.getElementById('counterFromParent').innerHTML).to.equal('1');
+
+      done();
+    });
   });
 
-  it.skip('can be tested with enzyme', function () {
-    function ChildComponent() {
-      return <p>I am a child.</p>;
-    }
-
-    function Component({ name }) {
-      return (
-        <div>
-          <p id="name">{name}</p>
-
-          <ChildComponent />
-        </div>
-      );
-    }
-
-    const ObservedComponent = observe(function (app) {
-      return of$(app.getName())
-        .pipe(map$(name => ({ name })));
-    })(Component);
-
-    const fakeApp = {
-      getName() {
-        return 'ShallowApp';
-      }
-    };
-
-    function ComponentToRender(props) {
-      return (
-        <Provider app={fakeApp}>
-          <ObservedComponent {...props} />
-        </Provider>
-      );
-    }
-
-    const wrapper = mount(<ComponentToRender />);
-    expect(wrapper.find(ObservedComponent)).to.have.length(1);
-    expect(wrapper.find(ObservedComponent)).to.have.length(1);
-    expect(wrapper.find(ChildComponent)).to.have.length(1);
-    expect(wrapper.find('#name')).to.have.length(1);
-    expect(wrapper.text()).to.contain('I am a child');
-  });
-
-  it.skip('can return props synchronously', function () {
+  it('can return props synchronously', function (done) {
     function Component({ name }) {
       return (
         <div>
@@ -204,21 +167,22 @@ describe('frint-preact › components › observe', function () {
     const fakeApp = {
       getName() {
         return 'FakeApp';
+      },
+      get() {
+        return ObservedComponent;
       }
     };
 
-    function ComponentToRender(props) {
-      return (
-        <Provider app={fakeApp}>
-          <ObservedComponent {...props} />
-        </Provider>
-      );
-    }
+    render(
+      fakeApp,
+      document.getElementById('root')
+    );
 
-    const wrapper = mount(<ComponentToRender />);
-    expect(wrapper.find(ObservedComponent)).to.have.length(1);
-    expect(wrapper.find(Component)).to.have.length(1);
-    expect(wrapper.find('#name')).to.have.length(1);
-    expect(wrapper.text()).to.contain('FakeApp');
+    setImmediate(function () {
+      const el = document.getElementById('root');
+      expect(el.innerHTML).to.contain('FakeApp');
+
+      done();
+    });
   });
 });
