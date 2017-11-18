@@ -11,7 +11,7 @@ import RegionService from './services/Region';
 
 import PreactHandler from './handlers/PreactHandler';
 
-export default {
+module.exports = {
   render,
   streamProps,
   isObservable,
