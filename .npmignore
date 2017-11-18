@@ -1,0 +1,13 @@
+!lib/
+src
+test
+Makefile
+node_modules
+npm-debug.log
+*~
+*.swp
+*.swo
+coverage
+.nyc_output/
+examples/
+.changelog/
