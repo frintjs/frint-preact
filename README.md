@@ -13,6 +13,7 @@ Find examples [here](https://github.com/frintjs/frint-preact/tree/master/example
 ## Packages
 
 * [frint-preact](./packages/frint-preact): For creating Preact-compatible reactive components.
+* [frint-router-preact](./packages/frint-router-preact): Integration with [`frint-router`](https://frint.js.org/docs/packages/frint-router/) using Preact components.
 
 ## License
 
