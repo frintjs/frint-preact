@@ -31,6 +31,12 @@ module.exports = {
       commonjs2: 'frint',
       amd: 'frint',
     },
+    'preact': {
+      root: 'Preact',
+      commonjs: 'preact',
+      commonjs2: 'preact',
+      amd: 'preact',
+    },
   }]),
   target: 'web',
   plugins: plugins,

@@ -9,7 +9,7 @@ import Provider from './components/Provider';
 
 import RegionService from './services/Region';
 
-import ReactHandler from './handlers/ReactHandler';
+import PreactHandler from './handlers/PreactHandler';
 
 export default {
   render,
@@ -23,5 +23,5 @@ export default {
 
   RegionService,
 
-  ReactHandler,
+  PreactHandler,
 };
