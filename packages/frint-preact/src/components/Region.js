@@ -8,17 +8,6 @@ import RegionHandler from 'frint-component-handlers/lib/RegionHandler';
 import PreactHandler from '../handlers/PreactHandler';
 
 export default class Region extends Preact.Component {
-  static propTypes = {
-    className: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    uniqueKey: PropTypes.string,
-    data: PropTypes.any,
-  };
-
-  static contextTypes = {
-    app: PropTypes.object,
-  };
-
   constructor(...args) {
     super(...args);
 

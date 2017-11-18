@@ -4,6 +4,7 @@
   ],
   "plugins": [
     "transform-object-rest-spread",
-    ["transform-react-jsx", { "pragma":"preact.h" }]
+    ["transform-react-jsx", { "pragma": "h" }],
+    "transform-class-properties"
   ]
 }

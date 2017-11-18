@@ -21,7 +21,7 @@ describe('frint-preact › components › observe', function () {
     expect(observe).to.be.a('function');
   });
 
-  it('generates Component bound to observable for props, without app in context', function () {
+  it.only('generates Component bound to observable for props, without app in context', function () {
     function Component({ counter }) {
       return (
         <p id="counter">{counter}</p>

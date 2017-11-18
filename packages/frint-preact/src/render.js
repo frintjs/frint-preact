@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies, global-require */
-import Preact, { h } from 'react';
+import Preact, { h } from 'preact';
 
 import getMountableComponent from './components/getMountableComponent';
 

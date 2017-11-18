@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import Preact, { h } from 'preact';
-import PropTypes from 'prop-types';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 import composeHandlers from 'frint-component-utils/lib/composeHandlers';
@@ -15,10 +14,6 @@ export default function observe(fn) {
       static displayName = (typeof Component.displayName !== 'undefined')
         ? `observe(${Component.displayName})`
         : 'observe';
-
-      static contextTypes = {
-        app: PropTypes.object.isRequired
-      };
 
       constructor(props, context) {
         super(props, context);
@@ -39,7 +34,7 @@ export default function observe(fn) {
 
         // async
         this._handler = composeHandlers(
-          ReactHandler,
+          PreactHandler,
           ObserveHandler,
           {
             component: this,
