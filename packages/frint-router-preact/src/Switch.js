@@ -12,7 +12,7 @@ export default class Switch extends Preact.Component {
   constructor(...args) {
     super(...args);
 
-    this._handler = createSwitchHandler(ReactHandler, this.context.app, this);
+    this._handler = createSwitchHandler(PreactHandler, this.context.app, this);
 
     this.state = this._handler.getInitialData();
   }

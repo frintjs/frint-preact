@@ -6,7 +6,7 @@ export default class Link extends Preact.Component {
   constructor(...args) {
     super(...args);
 
-    this._handler = createLinkHandler(ReactHandler, this.context.app, this);
+    this._handler = createLinkHandler(PreactHandler, this.context.app, this);
 
     this.state = this._handler.getInitialData();
   }

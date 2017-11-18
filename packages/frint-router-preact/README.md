@@ -95,6 +95,8 @@ export default function Root() {
 
 ### `Switch` component
 
+(This component is not fully ported yet from `frint-react`, and needs more work)
+
 The `Switch` component makes sure only one direct child `Route` is shown. The first one to match always wins, and the last `Route` with no `path` is rendered as a default case.
 
 Take a look at this scenario, for e.g.:
@@ -329,6 +331,8 @@ This package is a close implementation of the APIs introduced by the awesome [`r
 ## Switch
 
 > Switch
+
+Now fully done yet.
 
 ### Props
 

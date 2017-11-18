@@ -8,7 +8,7 @@ export default class Route extends Preact.Component {
   constructor(...args) {
     super(...args);
 
-    this._handler = createRouteHandler(ReactHandler, this.context.app, this);
+    this._handler = createRouteHandler(PreactHandler, this.context.app, this);
 
     this.state = this._handler.getInitialData();
   }
